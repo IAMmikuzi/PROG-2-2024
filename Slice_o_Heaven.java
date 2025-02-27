@@ -46,8 +46,8 @@ public class Slice_o_Heaven {
         this.orderTotal=orderTotal;
     }
     public void takeOrder(){
-        System.out.println("Oreder accepted!");
-        System.out.println("Oreder is being prepared!");
+        System.out.println("Order accepted!");
+        System.out.println("Order is being prepared!");
         makePizza();
         printReceipt();
     }
