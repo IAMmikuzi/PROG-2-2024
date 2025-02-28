@@ -66,4 +66,39 @@ public class Slice_o_Heaven {
         System.out.println("Order detail: "+pizzaIngredients);
         System.out.println("Order Total: "+orderTotal);
     }
+
+    public void processCardPayment(String cardNumber ,String expiryDate,int cvv){
+
+        int cardLenth=cardNumber.length();
+        if(cardLenth==14){
+            System.out.println("Card accepted");
+        }
+        else{
+            System.out.println("Invalid card");
+        }
+
+        int firstCardDigit=Integer.parseInt(cardNumber.substring(0, 1));
+
+        String blacklistedNumber="12345678910111";
+        if(cardNumber.equals(blacklistedNumber)){
+            System.out.println("”Card is blacklisted. Please use another card");
+        }
+
+        int lastFourDigits=Integer.parseInt(cardNumber.substring(11, 14));
+
+        String cardNumberToDisplay=firstCardDigit+"*********"+lastFourDigits;
+        System.out.println("displayable cardNumber:"+cardNumberToDisplay);
+
+    }
+
+    public void specialOfTheDay(String pizzaOfTheDay,String sideOfTheDay,String specialPrice){
+        StringBuilder sb = new StringBuilder();
+        sb.append("Today Special:");
+        sb.append("Today Pizza:").append(pizzaOfTheDay).append("\n");
+        sb.append("Today Side:").append(sideOfTheDay).append("\n");
+        sb.append("Today price:").append(specialPrice).append("\n");
+        
+        System.out.println(sb.toString());
+    }
+
 }
